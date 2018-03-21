@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="./fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body class="{{bg_color}}">
+
+    <!-- メッセージがある場合は表示する
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    {% if messages %}
+      {% for message in messages %}
+      <ul class="message {{ message.tags }}">
+        <li{% if message.tags %} class="{{ message.tags }} font-size-m"{% endif %}>{{message}}</li>
+      </ul>
+      {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+            {% block jquery %}
+            {% endblock %}
+        }
+      );
+    </script>
+  </body>
+</html>

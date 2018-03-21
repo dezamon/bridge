@@ -1,0 +1,262 @@
+{% extends 'common/base.html' %}
+
+{% load staticfiles %}
+
+    {% block content %}
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+
+        <!-- Sidebar Header -->
+        <div class="sidebar_header">
+          <h3 id="logo">Bridge</h3>
+        </div>
+
+        <h5 class="section">Customers</h5>
+        <div class="section-box">
+          <ul>
+
+            {% for item in users %}
+              <li><i class="material-icons" style="font-size:30px;display:">person</i>{{item.username}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="section-box" style="border-bottom:none;">
+          <ul>
+            <a href="{% url 'logout_account' %}"><li><i class="material-icons">directions_run</i>ログアウト</li></a>
+          </ul>
+        </div>
+        <div class="popup-form" id="add_person_field">
+            <p class="error-message">無効なメールアドレスです</p>
+            <p class="success-message">顧客にメールを送信しました</p>
+            <div class="item">
+              <i class="material-icons" style="color:#424242;">person</i>
+              <input type="text" name="user_name" value="" class="form-control" style="" placeholder="名前">
+            </div>
+
+            <div class="item">
+              <i class="material-icons" style="color:#424242;">mail</i>
+              <input type="text" name="user_mail" value="" class="form-control" style="" placeholder="メール">
+            </div>
+
+            <div class="item">
+              <i class="material-icons" style="color:#424242;">vpn_key</i>
+              <input type="text" name="user_password" value="" class="form-control" style="" placeholder="パスワード">
+            </div>
+
+            <button type="button" name="button" class="form-button" id="add_person_confirm">作成する</button>
+        </div>
+        <div id="add_person">
+          <i class="material-icons">person_add</i>
+        </div>
+      </nav>
+
+      <!-- Content -->
+      <div id="content">
+          <div id="content_header">
+            <h4>
+              <div id="content_header_menu">
+                <button type="button" class="btn btn-secondary">チャット</button>
+                <button type="button" class="btn btn-success" style="background-color:#47D69A; border-color:#47D69A;">タスク</button>
+              </div>
+                <i class="material-icons" style="font-size:30px;">person</i>
+                河合貴文
+            </h4>
+          </div>
+
+          <div id="workspace">
+            <div id="task">
+
+              <div id="task_box">
+                <ul>
+                  <li>
+                    <span class="date">2017-10-20</span>
+                    <span class="title">FBバナー作成</span>
+                    <i class="material-icons">check</i>
+                  </li>
+                  <li class="done">
+                    <span class="date">2017-10-20</span>
+                    <span class="title">FBバナー作成</span>
+                    <i class="material-icons">check</i>
+                  </li>
+                  <li>
+                    <span class="date">2017-10-20</span>
+                    <span class="title">FBバナー作成</span>
+                    <i class="material-icons">check</i>
+                  </li>
+                  <li>
+                    <span class="date">2017-10-20</span>
+                    <span class="title">FBバナー作成</span>
+                    <i class="material-icons">check</i>
+                  </li>
+                  <li>
+                    <span class="date">2017-10-20</span>
+                    <span class="title">FBバナー作成</span>
+                    <i class="material-icons">check</i>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Option to hide the done task -->
+              <div id="option">
+                <i class="material-icons">remove_red_eye</i>
+                完了済を隠す
+              </div>
+
+              <div class="popup-form" id="add_task_field">
+                  <div class="item">
+                    <i class="material-icons" style="color:#424242;">assignment</i>
+                    <input type="text" name="task_title" value="" class="form-control" style="" placeholder="タイトル">
+                  </div>
+
+                  <button type="button" name="button" class="form-button" id="add_person_confirm">作成する</button>
+              </div>
+
+              <div id="add_circle">
+                <i class="material-icons">add</i>
+              </div>
+            </div>
+
+            <div id="chat">
+              <div id="chat_header">
+                <h5>名刺修正</h5>
+              </div>
+              <div id="chat_view">
+                <div id="chat_box">
+
+                  <div class="message-wrapper">
+                  <div class="message message-left">
+                    <div class="text">
+                      業界によると思うけど、ウチの会社（製造販売業）では顧客はカスタマーで、その反対はベンダー（販売者）かサプライヤー（供給者）かだね。
+
+                      クライアントってのは、直訳すると「相談に来た人」「依頼人」的なニュアンスが強いので、物のやりとり関係の商売関係というよりはコンサルタント会社とか弁護士さんとかアドバイザー系の仕事のお客さんですね。
+                    </div>
+                    <span class="name"><i class="material-icons" style="font-size:30px;">person</i> 富田太郎</span>
+                    <span class="date">2017/12/10 15:30</span>
+                  </div>
+                  </div>
+
+                  <div class="message-wrapper">
+                  <div class="message message-right">
+                    <div class="text">
+                      業界によると思うけど、ウチの会社（製造販売業）では顧客はカスタマーで、その反対はベンダー（販売者）かサプライヤー（供給者）かだね。
+
+                      クライアントってのは、直訳すると「相談に来た人」「依頼人」的なニュアンスが強いので、物のやりとり関係の商売関係というよりはコンサルタント会社とか弁護士さんとかアドバイザー系の仕事のお客さんですね。
+                    </div>
+                    <span class="name"><i class="material-icons" style="font-size:30px;">person</i> 富田太郎</span>
+                    <span class="date">2017/12/10 15:30</span>
+                  </div>
+                </div>
+
+                <div class="message-wrapper">
+                  <div class="message message-left">
+                    <div class="text">
+                      業界によると思うけど、ウチの会社（製造販売業）では顧客はカスタマーで、その反対はベンダー（販売者）かサプライヤー（供給者）かだね。
+
+                      クライアントってのは、直訳すると「相談に来た人」「依頼人」的なニュアンスが強いので、物のやりとり関係の商売関係というよりはコンサルタント会社とか弁護士さんとかアドバイザー系の仕事のお客さんですね。
+                    </div>
+                    <span class="name"><i class="material-icons" style="font-size:30px;">person</i> 富田太郎</span>
+                    <span class="date">2017/12/10 15:30</span>
+                  </div>
+                </div>
+
+                </div>
+              </div>
+              <div id="text_box">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <textarea name="name" rows="2" cols="80" class="form-control" placeholder="メッセージを入力"></textarea>
+                    <div id="text_box_menu">
+                    <!--<i class="fa fa-file fa-4x" aria-hidden="true" style="color:#ccc;"></i>-->
+                    <i class="material-icons" style="color:#ccc;">attach_file</i>
+                    <!--<i class="fa fa-paper-plane fa-4x" aria-hidden="true" style="color:#47D69A;"></i>-->
+                    <i class="material-icons" style="color:#47D69A;">send</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    {% endblock %}
+
+    {% block jquery %}
+    $("#add_circle").on('click',function(){
+      // get current icon
+      var currentIcon = $(this).children('.material-icons').text();
+      console.log(currentIcon);
+
+      if(currentIcon == "add"){
+        $("#add_task_field").fadeIn();
+        $(this).children('.material-icons').text('close');
+      } else {
+        $("#add_task_field").fadeOut();
+        $(this).children('.material-icons').text('add');
+      }
+    });
+
+    $("#add_person").on('click', function(){
+      // get current icon
+      var currentIcon = $(this).children('.material-icons').text();
+
+      if(currentIcon == "person_add") {
+        $("#add_person_field").fadeIn();
+        $(this).children('.material-icons').text('close');
+      } else {
+        $("#add_person_field").fadeOut();
+        $(this).children('.material-icons').text('person_add');
+      }
+      //var name = $("input[name=user_name]").val();
+      //console.log(name);
+    });
+
+    $("#add_person_confirm").on('click', function(){
+      $name = $("input[name=user_name]").val();
+      $email = $("input[name=user_mail]").val();
+      $password = $("input[name=user_password]").val();
+
+      // connect to db with Ajax
+      $url = "hoge";
+      $data = {name:$name,
+              email:$email,
+              password:$password};
+
+      $.ajax({
+        type: "GET",
+        url: $url,
+        dataType: "json",
+        async: true,
+        data: $data,
+        success: function(data){
+          console.log("ok ajax");
+
+          // SUCCESS
+          if (data.status == "success"){
+            console.log("success");
+            $("#add_person_field .error-message").fadeOut('fast');
+            $("#add_person_field .success-message").fadeIn('fast');
+
+            // reset field
+            $("input[name=user_name]").val('');
+            $("input[name=user_mail]").val('');
+            $("input[name=user_password]").val('');
+
+            // Dismiss field ater few minute
+            setTimeout(function(){
+              $("#add_person_field .success-message").fadeOut('fast');
+              $("#add_person_field").fadeOut('fast');
+              $('#add_person .material-icons').text('person_add');
+            },1500);
+          } else {
+            console.log("failed");
+
+            if(data.message == "email") {
+              console.log("無効なメールアドレスです");
+              $("#add_person_field .error-message").fadeIn('fast');
+            }
+          }
+        }
+      });
+    });
+    {% endblock %}

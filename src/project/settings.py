@@ -15,7 +15,9 @@
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+print("basedir:{0}".format(BASE_DIR))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -25,6 +27,9 @@ SECRET_KEY = 'pf-@jxtojga)z+4s*uwbgjrq$aep62-thd0q7f&o77xtpka!_m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+# WHEN YOU WANT TO COLLECTSTATIC, SET TRUE
+ARE_YOU_GOING_TO_COLLECTSTATIC = False
 
 # SECURITY WARNING: App Engine's security features ensure that it is safe to
 # have ALLOWED_HOSTS = ['*'] when the app is deployed. If you deploy a Django
@@ -41,6 +46,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'custom_user',
 )
 
 MIDDLEWARE = (
@@ -58,7 +66,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +128,19 @@ USE_TZ = True
 # Fill in your cloud bucket and switch which one of the following 2 lines
 # is commented to serve static content from GCS
 # STATIC_URL = 'https://storage.googleapis.com/<your-gcs-bucket>/static/'
-STATIC_URL = '/static/'
+if DEBUG == False:
+    STATIC_URL = ''
+else:
+    STATIC_URL = '/static/'
 # [END staticurl]
 
-STATIC_ROOT = 'static/'
+# COLLECTSTATIC SETTING
+if ARE_YOU_GOING_TO_COLLECTSTATIC == False:
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR,'static'),
+    )
+else:
+    STATIC_ROOT = 'static/'
+
+# Authorization models
+AUTH_USER_MODEL = 'custom_user.User'

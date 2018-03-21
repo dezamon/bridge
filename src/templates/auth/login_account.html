@@ -1,0 +1,28 @@
+{% extends 'common/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<!-- Content -->
+<div id="">
+  <div class="popup-form margin-center margin-top-el padding-top-l padding-bottom-l padding-right-s padding-left-s" style="width:300px;">
+    <form class="" action="{% url 'login_account' %}" method="post">
+      {% csrf_token %}
+    <p class="form-title text-center">ログイン</p>
+    <div class="item" style="width:280px;">
+      <i class="material-icons" style="color:#424242;">email</i>
+      <input type="text" name="email" value="" class="form-control" placeholder="メールアドレス">
+    </div>
+    <div class="item" style="width:280px;">
+      <i class="material-icons" style="color:#424242;">vpn_key</i>
+      <input type="password" name="password" value="" class="form-control" placeholder="パスワード">
+    </div>
+    <p class="text-center margin-top-s margin-bottom-s font-size-m text-color-red">{{error}}</p>
+    <button type="submit" class="form-button margin-top-m" id="add_person_confirm">ログイン</button>
+  </form>
+  </div>
+
+</div>
+
+{% endblock %}

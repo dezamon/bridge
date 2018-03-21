@@ -1,0 +1,547 @@
+html {
+  min-width: 900px;
+}
+
+body {
+  font-family: yuGothic;
+  font-size: 10px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+/*　背景色 */
+.bg {
+  &-gray {
+    background-color: #F6F6F6;
+  }
+}
+
+/* マージン */
+.margin {
+  &-center {
+    margin: 0 auto;
+  }
+
+  &-top{
+    &-s {
+      margin-top: 10px;
+    }
+    &-m {
+      margin-top: 20px;
+    }
+    &-l {
+      margin-top: 30px;
+    }
+    &-el {
+      margin-top: 100px;
+    }
+  }
+
+  &-bottom{
+    &-s {
+      margin-bottom: 10px;
+    }
+    &-m {
+      margin-bottom: 20px;
+    }
+    &-l {
+      margin-bottom: 30px;
+    }
+    &-el {
+      margin-bottom: 100px;
+    }
+  }
+}
+
+/*　パディング */
+.padding {
+  &-top {
+    &-s {
+      padding-top: 10px;
+    }
+    &-m {
+      padding-top: 20px;
+    }
+    &-l {
+      padding-top: 30px;
+    }
+  }
+
+  &-bottom {
+    &-s {
+      padding-bottom: 10px;
+    }
+    &-m {
+      padding-bottom: 20px;
+    }
+    &-l {
+      padding-bottom: 30px;
+    }
+  }
+  &-right {
+    &-s {
+      padding-right: 10px;
+    }
+    &-m {
+      padding-right: 20px;
+    }
+    &-l {
+      padding-right: 30px;
+    }
+  }
+  &-left {
+    &-s {
+      padding-left: 10px;
+    }
+    &-m {
+      padding-left: 20px;
+    }
+    &-l {
+      padding-left: 30px;
+    }
+  }
+}
+
+/* テキスト */
+.text {
+  &-center {
+    text-align: center;
+  }
+}
+
+/* テキストカラー */
+.text-color {
+  &-gray {
+    color: #888888;
+  }
+  &-red {
+    color: #DA4639;
+  }
+  &-green {
+    color: #3EC941;
+  }
+}
+
+/* フォントサイズ */
+.font-size{
+  &-s {
+    font-size: 12px;
+  }
+  &-m {
+    font-size: 15px;
+  }
+  &-l {
+    font-size: 18px;
+  }
+}
+
+/* material icon */
+.material-icons {
+  vertical-align: middle !important;
+  padding-bottom: 3.5px;
+}
+
+/* リンク */
+.link {
+  &-gray {
+    font-size: 18px;
+    color: #A7A7A7;
+  }
+}
+
+// メッセージ
+.message {
+  padding: 0;
+  margin-top: 0;
+
+  .success {
+    background-color: #3EC941;
+  }
+
+  .error {
+    background-color: #EE6F80;
+  }
+
+  li {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    list-style: none;
+    padding: {
+      top:15px;
+      bottom: 15px;
+    }
+  }
+}
+
+/* 固定幅フォーム */
+.fixed-width-form{
+  width: 300px;
+}
+
+/* 飛び出し用フォーム */
+.popup-form{
+  background-color:#fff;
+  border-radius: 3px;
+  width:100%;
+  height:auto;
+  overflow:hidden;
+  //padding: 8px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+
+  .item {
+    input {
+      width:83%;
+      display:inline-block;
+      float:right;
+      background-color: #ECECEC;
+      border: none;
+    }
+    display: inline-block;
+    margin-top: 10px;
+    i {
+      margin: {
+        top: 5px;
+      }
+    }
+
+    &:first-child{
+      margin-top: 0px;
+    }
+  }
+}
+
+/* フォームタイトル */
+.form {
+  // タイトル
+  &-title {
+      font-weight: bold;
+      font-size: 18px;
+      color: #4E4E4E;
+  }
+}
+
+/* ボタン　*/
+.form-button {
+  width: 100%;
+  background-color: #5FC8D4;
+  border: none;
+  font-family: yugothic;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  padding: {
+    top:5px;
+    bottom: 5px;
+  }
+  border-radius: 5px;
+  cursor: pointer;
+  cursor: hand;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+#sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: #424242;
+    padding: 1.0rem;
+
+    #logo {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .section {
+      color: #fff;
+      margin-top: 1.5rem;
+
+      &-box{
+
+        height: 300px;
+        border-bottom: 1px solid #fff;
+        overflow-y: scroll;
+        ul {
+          list-style: none
+          ;
+          padding-left: 0;
+        }
+        li {
+          font-size: 1.2rem;
+          color: #D8D8D8;
+          margin-top: 0.5rem;
+
+          i {
+            margin-right: 0.3rem;
+          }
+        }
+      }
+    }
+
+    #add_person {
+      background-color:#47D69A;
+      padding:8px;
+      width:50px;
+      border-radius:25px;
+      position: absolute;
+      left: 180px;
+      bottom: 0.8rem;
+      z-index: 2;
+      cursor: pointer;
+      cursor: hand;
+      i {
+        color:#fff;
+        font-size:30px;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &_field {
+        display: none;
+
+        /* エラーメッセージ */
+        .error-message {
+          color: #da4948;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 0;
+          font-size: 0.8rem;
+          display: none;
+        }
+
+        /* 成功メッセージ */
+        .success-message {
+          color: #0f9d58;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 0;
+          font-size: 0.8rem;
+          display: none;
+        }
+      }
+    }
+
+    .popup-form {
+      position: absolute;
+      bottom: 5.0rem;
+      width: 220px;
+    }
+}
+
+#content {
+  //background-color: green;
+  min-height: 100vh;
+  width: calc(100vw - 250px);
+  //min-width: 600px;
+}
+
+#content_header {
+  padding: {
+    top:0.8rem;
+    bottom: 0.8rem;
+  }
+  background-color: #fff;
+  border: {
+    bottom: 1px solid #D8D8D8;
+  }
+  h4 {
+    color: #737373;
+    text-align: center;
+  }
+
+  /* menu */
+  &_menu {
+    float: left;
+    margin-left: 1rem;
+
+    button {
+      border-radius: 20px;
+      min-width: 90px;
+    }
+  }
+}
+
+#workspace {
+  //background-color: aqua;
+  height: calc(100vh - 61px);
+  width: calc(100vw - 250px);
+}
+
+#task {
+  float: left;
+  background-color: #fff;
+  border: {
+    right: 1px solid #D8D8D8;
+  }
+  width: 290px;
+  height: calc(100vh - 61px);
+  padding: 10px 20px 10px 20px;
+
+  &_box {
+    height: calc(100vh - 260px);
+    overflow-y: scroll;
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+      border: 1px solid #ccc;
+      padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+      margin-top: 1rem;
+      .date {
+        display: block;
+        color: #737373;
+        font-weight: bold;
+      }
+
+      .title {
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 3px;
+      }
+
+      i {
+        float: right;
+      }
+    }
+
+    /* 完了済のタスク */
+    .done {
+      background-color: #D8D8D8;
+
+      i {
+        color: #1FC57F;
+      }
+    }
+  }
+
+  /* 非表示用のオプション */
+  #option {
+    color: #D8D8D8;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 1rem;
+  }
+
+  #add_circle{
+    background-color:#737373;
+    padding:8px;
+    padding-left: 10px;
+    width:50px;
+    border-radius:25px;
+    position: absolute;
+    left: 480px;
+    bottom: 0.8rem;
+    z-index: 2;
+    i {
+      color:#fff;
+      font-size:30px;
+    }
+  }
+}
+
+#add_task_field {
+  display:none;
+}
+
+#chat {
+  //background-color: violet;
+  float: right;
+  width: calc(100vw - 540px);
+  height: calc(100vh - 61px);
+
+  &_header {
+    padding: {
+      top:0.5rem;
+      bottom: 0.5rem;
+    }
+    background-color: #5FC8D4;
+
+    h5 {
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  &_box {
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    .message {
+      max-width: 350px;
+      margin-top: 1rem;
+      .text {
+        background-color: #fff;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+        margin-bottom: 0.5rem;
+      }
+
+      .name {
+        font-size: 0.9rem;
+        color: #737373;
+      }
+
+      .date {
+        font-size: 0.8rem;
+        color: #737373;
+        float: right;
+      }
+
+      /*　相手用のメッセージー */
+      &-left {
+        .text {
+          background-color: #8FDCE5;
+        }
+      }
+
+      /*　自分用のメッセージー */
+      &-right {
+        float: right;
+      }
+
+      /* 外枠　*/
+      &-wrapper {
+        height:auto;
+        overflow:hidden;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+#text_box {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  width: calc(100vw - 540px);
+
+  textarea {
+    width: calc(100vw - 740px);
+  }
+
+  &_menu {
+    float: right;
+    position: absolute;
+    right: 0.1rem;;
+
+    i {
+      margin-right: 2rem;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+#chat_view {
+  background-color: #F6F6F6;
+  width: calc(100vw - 540px);
+  height: calc(100vh - 148px);
+}

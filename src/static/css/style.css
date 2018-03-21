@@ -1,0 +1,365 @@
+@charset "UTF-8";
+html {
+  min-width: 900px; }
+
+body {
+  font-family: yuGothic;
+  font-size: 10px; }
+
+.wrapper {
+  display: flex;
+  align-items: stretch; }
+
+/*　背景色 */
+.bg-gray {
+  background-color: #F6F6F6; }
+
+/* マージン */
+.margin-center {
+  margin: 0 auto; }
+.margin-top-s {
+  margin-top: 10px; }
+.margin-top-m {
+  margin-top: 20px; }
+.margin-top-l {
+  margin-top: 30px; }
+.margin-top-el {
+  margin-top: 100px; }
+.margin-bottom-s {
+  margin-bottom: 10px; }
+.margin-bottom-m {
+  margin-bottom: 20px; }
+.margin-bottom-l {
+  margin-bottom: 30px; }
+.margin-bottom-el {
+  margin-bottom: 100px; }
+
+/*　パディング */
+.padding-top-s {
+  padding-top: 10px; }
+.padding-top-m {
+  padding-top: 20px; }
+.padding-top-l {
+  padding-top: 30px; }
+.padding-bottom-s {
+  padding-bottom: 10px; }
+.padding-bottom-m {
+  padding-bottom: 20px; }
+.padding-bottom-l {
+  padding-bottom: 30px; }
+.padding-right-s {
+  padding-right: 10px; }
+.padding-right-m {
+  padding-right: 20px; }
+.padding-right-l {
+  padding-right: 30px; }
+.padding-left-s {
+  padding-left: 10px; }
+.padding-left-m {
+  padding-left: 20px; }
+.padding-left-l {
+  padding-left: 30px; }
+
+/* テキスト */
+.text-center {
+  text-align: center; }
+
+/* テキストカラー */
+.text-color-gray {
+  color: #888888; }
+.text-color-red {
+  color: #DA4639; }
+.text-color-green {
+  color: #3EC941; }
+
+/* フォントサイズ */
+.font-size-s {
+  font-size: 12px; }
+.font-size-m {
+  font-size: 15px; }
+.font-size-l {
+  font-size: 18px; }
+
+/* material icon */
+.material-icons {
+  vertical-align: middle !important;
+  padding-bottom: 3.5px; }
+
+/* リンク */
+.link-gray {
+  font-size: 18px;
+  color: #A7A7A7; }
+
+.message {
+  padding: 0;
+  margin-top: 0; }
+  .message .success {
+    background-color: #3EC941; }
+  .message .error {
+    background-color: #EE6F80; }
+  .message li {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 15px; }
+
+/* 固定幅フォーム */
+.fixed-width-form {
+  width: 300px; }
+
+/* 飛び出し用フォーム */
+.popup-form {
+  background-color: #fff;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); }
+  .popup-form .item {
+    display: inline-block;
+    margin-top: 10px; }
+    .popup-form .item input {
+      width: 83%;
+      display: inline-block;
+      float: right;
+      background-color: #ECECEC;
+      border: none; }
+    .popup-form .item i {
+      margin-top: 5px; }
+    .popup-form .item:first-child {
+      margin-top: 0px; }
+
+/* フォームタイトル */
+.form-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #4E4E4E; }
+
+/* ボタン　*/
+.form-button {
+  width: 100%;
+  background-color: #5FC8D4;
+  border: none;
+  font-family: yugothic;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  cursor: hand; }
+  .form-button:hover {
+    opacity: 0.8; }
+
+#sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #424242;
+  padding: 1.0rem; }
+  #sidebar #logo {
+    font-weight: bold;
+    color: #fff; }
+  #sidebar .section {
+    color: #fff;
+    margin-top: 1.5rem; }
+    #sidebar .section-box {
+      height: 300px;
+      border-bottom: 1px solid #fff;
+      overflow-y: scroll; }
+      #sidebar .section-box ul {
+        list-style: none;
+        padding-left: 0; }
+      #sidebar .section-box li {
+        font-size: 1.2rem;
+        color: #D8D8D8;
+        margin-top: 0.5rem; }
+        #sidebar .section-box li i {
+          margin-right: 0.3rem; }
+  #sidebar #add_person {
+    background-color: #47D69A;
+    padding: 8px;
+    width: 50px;
+    border-radius: 25px;
+    position: absolute;
+    left: 180px;
+    bottom: 0.8rem;
+    z-index: 2;
+    cursor: pointer;
+    cursor: hand; }
+    #sidebar #add_person i {
+      color: #fff;
+      font-size: 30px; }
+    #sidebar #add_person:hover {
+      opacity: 0.8; }
+    #sidebar #add_person_field {
+      display: none;
+      /* エラーメッセージ */
+      /* 成功メッセージ */ }
+      #sidebar #add_person_field .error-message {
+        color: #da4948;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        display: none; }
+      #sidebar #add_person_field .success-message {
+        color: #0f9d58;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        display: none; }
+  #sidebar .popup-form {
+    position: absolute;
+    bottom: 5.0rem;
+    width: 220px; }
+
+#content {
+  min-height: 100vh;
+  width: calc(100vw - 250px); }
+
+#content_header {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background-color: #fff;
+  border-bottom: 1px solid #D8D8D8;
+  /* menu */ }
+  #content_header h4 {
+    color: #737373;
+    text-align: center; }
+  #content_header_menu {
+    float: left;
+    margin-left: 1rem; }
+    #content_header_menu button {
+      border-radius: 20px;
+      min-width: 90px; }
+
+#workspace {
+  height: calc(100vh - 61px);
+  width: calc(100vw - 250px); }
+
+#task {
+  float: left;
+  background-color: #fff;
+  border-right: 1px solid #D8D8D8;
+  width: 290px;
+  height: calc(100vh - 61px);
+  padding: 10px 20px 10px 20px;
+  /* 非表示用のオプション */ }
+  #task_box {
+    height: calc(100vh - 260px);
+    overflow-y: scroll;
+    /* 完了済のタスク */ }
+    #task_box ul {
+      list-style: none;
+      padding-left: 0; }
+    #task_box li {
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      border: 1px solid #ccc;
+      padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+      margin-top: 1rem; }
+      #task_box li .date {
+        display: block;
+        color: #737373;
+        font-weight: bold; }
+      #task_box li .title {
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 3px; }
+      #task_box li i {
+        float: right; }
+    #task_box .done {
+      background-color: #D8D8D8; }
+      #task_box .done i {
+        color: #1FC57F; }
+  #task #option {
+    color: #D8D8D8;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 1rem; }
+  #task #add_circle {
+    background-color: #737373;
+    padding: 8px;
+    padding-left: 10px;
+    width: 50px;
+    border-radius: 25px;
+    position: absolute;
+    left: 480px;
+    bottom: 0.8rem;
+    z-index: 2; }
+    #task #add_circle i {
+      color: #fff;
+      font-size: 30px; }
+
+#add_task_field {
+  display: none; }
+
+#chat {
+  float: right;
+  width: calc(100vw - 540px);
+  height: calc(100vh - 61px); }
+  #chat_header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #5FC8D4; }
+    #chat_header h5 {
+      color: #fff;
+      text-align: center; }
+  #chat_box {
+    padding: 1rem 1.5rem 1rem 1.5rem; }
+    #chat_box .message {
+      max-width: 350px;
+      margin-top: 1rem;
+      /*　相手用のメッセージー */
+      /*　自分用のメッセージー */
+      /* 外枠　*/ }
+      #chat_box .message .text {
+        background-color: #fff;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 0.5rem; }
+      #chat_box .message .name {
+        font-size: 0.9rem;
+        color: #737373; }
+      #chat_box .message .date {
+        font-size: 0.8rem;
+        color: #737373;
+        float: right; }
+      #chat_box .message-left .text {
+        background-color: #8FDCE5; }
+      #chat_box .message-right {
+        float: right; }
+      #chat_box .message-wrapper {
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 10px; }
+
+#text_box {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  width: calc(100vw - 540px); }
+  #text_box textarea {
+    width: calc(100vw - 740px); }
+  #text_box_menu {
+    float: right;
+    position: absolute;
+    right: 0.1rem; }
+    #text_box_menu i {
+      margin-right: 2rem;
+      font-size: 2.5rem; }
+
+#chat_view {
+  background-color: #F6F6F6;
+  width: calc(100vw - 540px);
+  height: calc(100vh - 148px); }
+
+/*# sourceMappingURL=style.css.map */
